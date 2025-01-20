@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .blog-post {
+            background: #fff;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post h2 {
+            margin: 0 0 0.5rem;
+            color: #ff6f61;
+        }
+
+        .blog-post p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Blog</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('tech')">Tech</a>
+        <a href="#" onclick="showSection('lifestyle')">Lifestyle</a>
+        <a href="#" onclick="showSection('travel')">Travel</a>
+    </nav>
+
+    <div class="container">
+        <div id="blog1" class="section active">
+            <div class="blog-post">
+                <h2>Latest in Technology</h2>
+                <p>Discover the cutting-edge innovations shaping the future.</p>
+            </div>
+            <div class="blog-post">
+                <h2>AI in 2025</h2>
+                <p>How artificial intelligence is revolutionizing industries worldwide.</p>
+            </div>
+        </div>
+
+        <div id="blog2" class="section">
+            <div class="blog-post">
+                <h2>Healthy Living</h2>
+                <p>Tips and tricks for a balanced and fulfilling lifestyle.</p>
+            </div>
+            <div class="blog-post">
+                <h2>Home Decor Trends</h2>
+                <p>Explore the latest styles to make your home a cozy haven.</p>
+            </div>
+        </div>
+
+        <div id="blog3" class="section">
+            <div class="blog-post">
+                <h2>Top Destinations</h2>
+                <p>Must-visit places for your next adventure.</p>
+            </div>
+            <div class="blog-post">
+                <h2>Travel Hacks</h2>
+                <p>Make your trips smoother with these expert tips.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+</body>
+</html>
